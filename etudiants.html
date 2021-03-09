@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>StageFinder</title>
+        <title>Student'sPoint</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/normalize.css"/>
-        <link rel="stylesheet" href="./assets/style.css"/>
+        <link rel="stylesheet" href="./assets/styless.css"/>
     </head>
 
     <body data-barba="wrapper">
@@ -16,13 +17,32 @@
         </div>
 
         <header>
-            <label id="siteName">StageFinder</label>
             <nav>
-                <a class="navButton" href="stages.html">Stages</a>
-                <a class="navButton" href="#">Entreprises</a>
-                <a class="navButton" href="#">Pilotes</a>
-                <a class="navButton" href="etudiants.html">Etudiants</a>
-                <a class="navButton" href="#">Mes candidatures</a>
+                <div>
+                    <h1 class="logo">Student'sPoint</h1>
+                </div>
+                <ul class="navBtn">
+                    <li>
+                        <a href="stages.html">Stages</a>
+                    </li>
+                    <li>
+                        <a href="#">Entreprises</a>
+                    </li>
+                    <li>
+                        <a href="#">Pilotes</a>
+                    </li>
+                    <li>
+                        <a href="etudiants.html">Etudiants</a>
+                    </li>
+                    <li>
+                        <button class="userBtn"><i class="fa fa-user-circle"></i></button>
+                    </li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </nav>
         </header>
 
@@ -33,5 +53,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-    <script src="./assets/main.js"></script>
+    <script src="./assets/mains.js"></script>
 </html>
