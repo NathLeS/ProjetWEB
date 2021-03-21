@@ -25,7 +25,7 @@
                     <li><a href="stages.html">Stages</a></li>
                     <li><a href="entreprises.html">Entreprises</a></li>
                     <li><a href="pilotes.html">Pilotes</a></li>
-                    <li><a href="etudiants.html">Etudiants</a></li>
+                    <li><a href="etudiants.php">Etudiants</a></li> <!--attention ici j'ai changé etudiants.html pour etudiants.php, il faudra faire pareil au dessus pour les prochaines vues-->
                     <li><button class="userBtn"><i class="fa fa-user-circle"></i></button></li>
                 </ul>
                 <ul class="userMenu">
@@ -50,7 +50,13 @@
                 <button class="searchBtn"><i class="fa fa-search"></i></button>
                 <button class="addBtn"><i class="fa fa-plus"></i></button>
             </div>
-            <label class="animateThis" id="test">Contenu</label>
+            <section class="animateThis" id="test"> <!--dans cette section (attention jai changé le label pour section car label utilisé avec formulaires) j'ajoute les différentes profils des étudiants--> 
+                <article class="profil">
+                    <img class="photo_profil "src="./assets/images/photo_pro2.jpg" >
+                    <h1 class = "h1_profil"> Nom Prenom</h1>
+                    <p class="biographie"> Biographie </p>
+                </article>
+            </section> 
         </main>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
