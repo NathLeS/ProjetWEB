@@ -39,7 +39,7 @@ nav {
     top: -55px;
     left: 65%;
     font-size: 250px;
-    color: #1abc9c;
+    color: #1abc9c ;
     font-weight: 800;
     opacity: 0.4;
     transform-origin: left;
@@ -47,7 +47,9 @@ nav {
     z-index: -3;
 }
 
-#test {                     /* Section "contenu" (Supprimez le pour remplir votre page) */
+/* ------------------ Onglet Etudiants --------------------*/
+
+#test {                    /* Section "contenu" (Supprimez le pour remplir votre page) */
     position: absolute;
     color: #3b0f0f;
     top: 50%;
@@ -56,6 +58,29 @@ nav {
     font-weight: 600;
     font-size: 70px;
     z-index: -1;
+}
+
+.profil{
+    background-color: #ecf0f1;
+    border-radius: 100px;
+}
+
+.photo_profil{
+    width: 100px;
+    height: auto;
+    border-radius: 100px;
+}
+
+.h1_profil{
+    color:#1abc9c;
+    font-size: 50px;
+    padding-left: 100px;
+    padding-right: 10px;
+}
+
+.biographie{
+    color:#757575 ;
+    font-size: 25px;
 }
 
 /* -------------------- Menu d'ajout -------------------- */
