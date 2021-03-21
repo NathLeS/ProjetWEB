@@ -1,7 +1,7 @@
 
 /* ############################################################################### */
 /* --------------------------------- GENERALITES --------------------------------- */
-/* ----------- (Présent sur chaque page (sauf page d'authetification)) ----------- */
+/* ----------- (Présent sur chaque page (sauf page d'authentification)) ----------- */
 /* ############################################################################### */
 
 
@@ -47,9 +47,9 @@ nav {
     z-index: -3;
 }
 
-#test {                     /* Label "contenu" (Supprimez le pour remplir votre page) */
+#test {                     /* Section "contenu" (Supprimez le pour remplir votre page) */
     position: absolute;
-    color: #757575;
+    color: #3b0f0f;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
