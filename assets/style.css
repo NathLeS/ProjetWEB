@@ -1,0 +1,619 @@
+
+/* ############################################################################### */
+/* --------------------------------- GENERALITES --------------------------------- */
+/* ----------- (Présent sur chaque page (sauf page d'authetification)) ----------- */
+/* ############################################################################### */
+
+
+* {
+    font-family: "Montserrat";
+    margin: 0px;                   /**/
+    padding: 0px;                  /* -> paramètres basique pour éviter tout problème d'affichage */
+    box-sizing: border-box;        /**/
+}
+
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+a:hover {
+    opacity: 0.8;
+}
+
+button {
+    border-style: none;
+    background: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+}
+
+.pageTitle {                /* Titre de la page placé à la verticale en fond */
+    position: absolute;
+    top: -55px;
+    left: 65%;
+    font-size: 250px;
+    color: #1abc9c;
+    font-weight: 800;
+    opacity: 0.4;
+    transform-origin: left;
+    transform: rotate(90deg);
+    z-index: -3;
+}
+
+#test {                     /* Label "contenu" (Supprimez le pour remplir votre page) */
+    position: absolute;
+    color: #757575;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 70px;
+    z-index: -1;
+}
+
+/* -------------------- Menu d'ajout -------------------- */
+
+.addMenu {
+    background: #ecf0f1;
+    /* visibility: hidden;
+    opacity: 0; */
+    position: absolute;
+    border-radius: 30px;
+    padding: 20px;
+    width: 450px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    transition: 0.5s;
+}
+
+.addMenu h1 {
+    color: #1abc9c;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.addMenu form {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.addMenu input {
+    background: #ecf0f1;
+    color: #757575;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    width: 350px;
+    height: 40px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.addMenu input:focus {
+    outline: none;
+}
+#remunerationInput, #placesInput {
+    width: 162px;
+}
+
+/* ############################################################################# */
+/* ---------------------- Animation de changement de page ---------------------- */
+/* ############################################################################# */
+
+.loading-screen {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: #1abc9c;
+    width: 0%;
+    height: 100%;
+}
+
+.load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ##################################################################### */
+/* ------------------------- Bar de navigation ------------------------- */
+/* ##################################################################### */
+
+.logo {                     /* Logo du site */
+    color: #1abc9c;
+    font-size: 44px;
+    font-weight: 800;
+    margin-left: 30px;
+}
+
+/* -------------------- Boutons de navigation -------------------- */
+
+.navBtn {                   /* Div des boutons de navigation */
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    margin-right: 15px;
+    margin-top: 8px;
+    transition: 0.5s;
+    z-index:2;
+}
+
+.navBtn li {                /* Sélectionne toutes les balises <li> de l'<ul> "navBtn" */
+    list-style: none;
+}
+
+.navBtn a {                 /* Sélectionne toutes les balises <a> de l'<ul> "navBtn" */
+    color: #757575;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.userBtn {                  /* Bouton utilisateur */
+    font-size: 32px;
+    color: #757575;
+    cursor: pointer;
+    padding-left: 2px;
+    margin-top: -6px;
+}
+
+/* -------------------- Burger -------------------- */
+
+.burger {                   /* Bouton menu en mode petit écran */
+    display: none;
+    margin-right: 30px;
+    cursor: pointer;
+    z-index:2;
+}
+
+.burger div {               /* Barre du burger */
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background: #757575;
+    transition: all 0.3s ease;
+}
+
+/* -------------------- Animation du Burger -------------------- */
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* -------------------- Responsive de la bar de navigation -------------------- */
+
+@media screen and (max-width:950px) {       /* Applique les styles suivant dès lors que la largeur */
+    body {                                       /* de l'écran est en dessous de 950 pixels */
+        overflow: hidden;
+    }
+    .navBtn {
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        margin: 0px;
+        top: 0;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        background: #ecf0f1;
+        transform: translateX(100%);
+    }
+    .navBtn li {
+        opacity: 0;     /* Cache les boutons (permet un effet de fondu à l'ouverture) */
+    }
+    .burger {
+        display: block;      /* Affiche le burger */
+    }
+}
+
+.navOpen {              /* Ouverture du menu (grâce au javascript) */
+    transform: translateX(0%);
+}
+
+@keyframes navBtnFade {         /* Animation de fondu des boutons à l'ouverture du menu */
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* #################################################################### */
+/* ------------------------- Menu utilisateur ------------------------- */
+/* #################################################################### */
+
+.userMenu {                     /* Div du menu */
+    position: absolute;
+    list-style: none;
+    background: #ecf0f1;
+    text-align: right;
+    border-radius: 20px;
+    top: 70px;
+    right: 20px;
+    padding: 15px 25px 15px 25px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.corner {                       /* Flèche suppérieur du menu */
+    position: absolute;
+    background: #ecf0f1;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    top: -5px;
+    right: 20px;
+}
+
+.userMenu a {               
+    text-decoration: none;
+    color: #757575;
+    font-size: 17px;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.userMenuOpen {                 /* Affichage du menu (grâce au javascript) */
+    visibility: visible;
+    opacity: 1;
+    top: 90px;
+}
+
+/* #################################################################### */
+/* ------------------------ Barre de recherche ------------------------ */
+/* #################################################################### */
+
+/* -------------------- Barre -------------------- */
+
+.searchDiv {
+    position: absolute;
+    margin-top: 35px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchInput {              /* Barre de recherche */
+    width: 700px;
+    height: 45px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: 0.5s;
+}
+.searchInput:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+}
+.searchInput:focus {
+    outline: none;
+}
+
+/* -------------------- Boutons -------------------- */
+
+.searchBtn {                    /* Bouton rechercher */
+    position: absolute;
+    padding: 9px;
+    left: 655px;
+    font-size: 19px;
+    color: #1abc9c;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.searchBtn:hover {
+    color: #1abc9ca8;
+}
+
+.addBtn {                       /* Bouton ajouter (une offre, une entreprise, etc..) */
+    position: absolute;
+    background: #ffffff;
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: 19px;
+    color: #757575;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.addBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+}
+
+/* -------------------- Gestion du responsive -------------------- */
+
+@media screen and (max-width:950px) {       /* Format tablette */
+    .searchInput {
+        width: 550px;
+    }
+    .searchBtn {
+        left: 510px;
+    }
+}
+@media screen and (max-width:750px) {       /* Format téléphone */
+    .searchInput {
+        width: 350px;
+    }
+    .searchBtn {
+        left: 310px;
+    }
+}
+
+
+/* ############################################################################ */
+/* ----------------------------------- PAGE ----------------------------------- */
+/* ---------------------------- D'AUTHENTIFICATION ---------------------------- */
+/* ############################################################################ */
+
+
+/* -------------------- Présentation du site -------------------- */
+
+.presentationDiv {                     /* Div de présentation du site */
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.authLogo {                     /* Logo de la page d'authentification */
+    font-size: 90px;
+    color: #1abc9c;
+    margin-bottom: 40px;
+    transition: 0.5s;
+}
+
+.authText {                     /* Text (de présentation) de la page d'authentification */
+    font-size: 30px;
+    color: #757575;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.authText span {               /* Permet la coloration de certains mot du texte */
+    color: #1abc9c;
+}
+
+/* -------------------- Boutons -------------------- */
+
+.authBtnBar {                   /* Div englobant les boutons */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inscBtn:hover, .connBtn:hover{ 
+    color: #ecf0f1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* ############################################################### */
+/* -------------------------- Connexion -------------------------- */
+/* ############################################################### */
+
+.connBtn {                      /* Bouton de connexion */
+    position: absolute;
+    left: -300px;
+    background: #1abc9c;
+    border-radius: 20px;
+    width: 240px;
+    height: 55px;
+    font-size: 23px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* ############################################################### */
+/* ------------------------- Inscription ------------------------- */
+/* ############################################################### */
+
+.inscBtn {                       /* Bouton d'inscription */
+    position: absolute;
+    right: -300px;
+    background: #1abc9c;
+    border-radius: 20px;
+    width: 240px;
+    height: 55px;
+    font-size: 23px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.inscMenu {
+    background: #ecf0f1;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    border-radius: 30px;
+    padding: 20px;
+    width: 450px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    transition: 0.5s;
+}
+.inscMenu h1{
+    color: #1abc9c;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.inscMenu form {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.inscForm input[type = "text"], input[type = "password"], select{
+    -webkit-appearance:none;
+    background: #ecf0f1;
+    color: #757575;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    width: 350px;
+    height: 40px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.inscForm input:focus, select:focus {
+        outline: none;
+}
+#lastInput {
+    margin-bottom: 20px;
+}
+.inscLabel {
+    color: #1abc9c;
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 50px;
+}
+.inscForm .creatBtn {
+    position: absolute;
+    color: #ecf0f1;
+    background: #1abc9c;
+    width: 260px;
+    font-size: 20px;
+    padding: 12px 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.inscForm select {
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+    opacity: 0;
+}
+.inscForm input[name=firstname] {
+    visibility: visible;
+    opacity: 1;
+}
+
+.radioDiv {
+    display: inline-flex;
+    overflow: hidden;
+    margin: 15px 10px 25px 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.radioInput {
+    display: none;
+}
+.radioLabel {
+    padding: 11px 25px;
+    font-size: 16px;
+    color: #757575;
+    background: #ecf0f1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.radioLabel:not(:last-of-type) {
+    border-right: 1px solid #1abc9c;
+}
+input:checked + label {
+    background: #1abc9c;
+}
+
+.container {
+    filter: blur(0px);
+}
+.containerBlur {
+    filter: blur(4px);
+}
+.inscMenuOpen {
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+}
+.businessInput {
+    visibility: hidden;
+    opacity: 0;
+}
+.businessSelect {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ############################################################## */
+/* ------------------------- Responsive ------------------------- */
+/* ############################################################## */
+
+@media screen and (max-width:850px) {          
+    .authLogo {
+        font-size: 60px;
+    }
+    .authText {
+        font-size: 25px;
+    }
+    .connBtn { 
+        left: -260px;
+    }
+    .inscBtn { 
+        right: -260px;
+    }
+}
+
+@media screen and (max-width:550px) {          
+    .authLogo {
+        font-size: 50px;
+    }
+    .authText {
+        font-size: 20px;
+    }
+    .connBtn { 
+        left: -120px;
+        bottom: 20px;
+    }
+    .inscBtn { 
+        right: -120px;
+        top: 20px;
+    }
+}
+
+
+/* ############################################################################ */
+/* ----------------------------------- PAGE ----------------------------------- */
+/* ---------------------------- D'AUTHENTIFICATION ---------------------------- */
+/* ############################################################################ */
+
