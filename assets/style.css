@@ -58,29 +58,44 @@ nav {
     font-weight: 600;
     font-size: 70px;
     z-index: -1;
+    padding-top: 80px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+
 }
 
-.profil{
+.animateThis article{
+    height: 220px;
+    width: 530px;
     background-color: #ecf0f1;
-    border-radius: 100px;
+    border-radius: 145px;
 }
 
-.photo_profil{
-    width: 100px;
-    height: auto;
-    border-radius: 100px;
+.animateThis img{
+    object-fit: cover;
+    width : 220px; height : 220px;
+    border: none;
+    -moz-border-radius : 145px;
+    -webkit-border-radius : 145px;
+    border-radius : 145px;
 }
 
-.h1_profil{
+.animateThis h1 {
+    position: relative;
+    top: -233px;
+    left: 260px;
     color:#1abc9c;
-    font-size: 50px;
-    padding-left: 100px;
-    padding-right: 10px;
+    font-size: 37px;
 }
 
-.biographie{
+.animateThis p {
+    position: relative;
+    width: 210px;
+    top: -217px;
+    left: 260px;
     color:#757575 ;
-    font-size: 25px;
+    font-size: 17px;
 }
 
 /* -------------------- Menu d'ajout -------------------- */
