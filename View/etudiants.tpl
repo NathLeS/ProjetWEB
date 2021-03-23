@@ -51,10 +51,15 @@
                 <button class="addBtn"><i class="fa fa-plus"></i></button>
             </div>
             <section class="animateThis" id="test"> <!--dans cette section (attention jai changé le label pour section car label utilisé avec formulaires) j'ajoute les différentes profils des étudiants--> 
-                <article class="profil">
-                    <img class="photo_profil "src="./assets/images/photo_pro2.jpg" >
-                    <h1 class = "h1_profil"> Nom Prenom</h1>
-                    <p class="biographie"> Biographie </p>
+                <article>
+                    <img src="./assets/images/photo_pro2.jpg" >
+                    <h1> Nom <br> Prenom</h1>
+                    <p> texte de biographie et et blalalalalala et et et et et et et et et et te et et et t</p>
+                </article>
+                <article>
+                    <img src="./assets/images/photo_pro2.jpg" >
+                    <h1> Nom <br> Prenom</h1>
+                    <p> texte de biographie et blalalalalala </p>
                 </article>
             </section> 
         </main>
