@@ -49,8 +49,8 @@ nav {
 
 /* ------------------ Onglet Etudiants --------------------*/
 
-#test {                    /* Section "contenu" (Supprimez le pour remplir votre page) */
-    position: absolute;
+#test {                   
+    position: relative;
     color: #3b0f0f;
     top: 50%;
     left: 50%;
@@ -58,18 +58,19 @@ nav {
     font-weight: 600;
     font-size: 70px;
     z-index: -1;
-    padding-top: 80px;
+    padding-top: 650px;
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 37rem);
     justify-content: center;
-
 }
 
 .animateThis article{
     height: 220px;
     width: 530px;
+    margin: 30px 25px;
     background-color: #ecf0f1;
     border-radius: 145px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .animateThis img{
