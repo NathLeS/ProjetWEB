@@ -14,7 +14,8 @@ class Manager {
     }
 
     public function SELECTALL(){
-        $query = $this->pdo->query("SELECT * FROM etudiant");             //requête SQL  
+        $query = $this->pdo->prepare("SELECT * FROM etudiant");             //requête SQL  
+        $query->execute();
         $students = $query->fetchAll();  
         return $students;
     }
