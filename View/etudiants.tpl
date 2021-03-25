@@ -25,7 +25,7 @@
                     <li><a href="stages.html">Stages</a></li>
                     <li><a href="entreprises.html">Entreprises</a></li>
                     <li><a href="pilotes.html">Pilotes</a></li>
-                    <li><a href="etudiants.php">Etudiants</a></li> <!--attention ici j'ai changé etudiants.html pour etudiants.php, il faudra faire pareil au dessus pour les prochaines vues-->
+                    <li><a href="index.php">Etudiants</a></li> <!--attention ici j'ai changé etudiants.html pour etudiants.php, il faudra faire pareil au dessus pour les prochaines vues-->
                     <li><button class="userBtn"><i class="fa fa-user-circle"></i></button></li>
                 </ul>
                 <ul class="userMenu">
@@ -50,18 +50,9 @@
                 <button class="searchBtn"><i class="fa fa-search"></i></button>
                 <button class="addBtn"><i class="fa fa-plus"></i></button>
             </div>
-            <section class="animateThis" id="test"> <!--dans cette section (attention jai changé le label pour section car label utilisé avec formulaires) j'ajoute les différentes profils des étudiants--> 
-                <article>
-                    <img src="./assets/images/photo_pro2.jpg" >
-                    <h1> Nom <br> Prenom</h1>
-                    <p> texte de biographie et et blalalalalala et et et et et et et et et et te et et et t</p>
-                </article>
-                <article>
-                    <img src="./assets/images/photo_pro2.jpg" >
-                    <h1> Nom <br> Prenom</h1>
-                    <p> texte de biographie et blalalalalala </p>
-                </article>
-            </section> 
+            <div class="animateThis" id="test"> <!--dans cette section (attention jai changé le label pour section car label utilisé avec formulaires) j'ajoute les différentes profils des étudiants--> 
+                {$ProfilArticle}
+            </div> 
         </main>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
