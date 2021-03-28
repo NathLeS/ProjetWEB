@@ -1,4 +1,3 @@
-
 /* ################################################################################### */
 /* ------------------------- Animation de changement de page ------------------------- */
 /* ################################################################################### */
@@ -89,3 +88,55 @@ document.querySelector('.userBtn').addEventListener("click", function() {
     const toggleMenu = document.querySelector('.userMenu');
     toggleMenu.classList.toggle('userMenuOpen');
 })
+
+/* ################################################################################# */
+/* --------------------------------- Onglet Etudiants ------------------------------ */
+/* ################################################################################# */
+
+/*---------------------------------- afficher un profil -----------------------------*/
+
+$(".card").click(function(){
+    var id = $(this).attr("id");
+    var h = "#h" + id;
+    $("#studentName").val($(h).text());
+
+    var s = "#s" + id;
+    $("#studentFirstName").val($(s).text());
+
+    var p = "#p" + id;
+    $("#studentBio").val($(p).text());
+
+    var i = "./assets/images/photo_profil" + id + ".jpg";
+    $("#studentPhoto").attr("src", i); 
+
+    var sId ="#studentId" + id;
+    $("#studentId").val($(sId).text());
+
+    $(".studentForm").css({"top" : "35%"});
+    $("#student_profile").css({"filter" : "blur(4px)"});
+})
+
+/* --------------------------------- fermer un profil ----------------------- */
+
+document.querySelector(".quitProfileBtn").addEventListener("click", function(){
+    document.querySelector(".studentForm").style.cssText="top: 300%;"
+    document.getElementById("student_profile").style.cssText="filter: blur(0px);"
+})
+
+/* -------------------------- editer un profil ------------------------------- */
+
+document.querySelector(".editProfileBtn").addEventListener("click", function(){
+    document.getElementById("studentName").style.cssText="pointer-events: auto;";
+    document.getElementById("studentFirstName").style.cssText="pointer-events: auto;";
+    document.getElementById("studentBio").style.cssText="pointer-events: auto;";
+})
+
+/* ---------------------------- ajouter un profil ---------------------------- */
+
+document.querySelector(".addBtn").addEventListener("click", function(){    //foncitonne pas car bouton pour ajouter caché par d'autres div
+    alert('clique');
+    document.getElementById("AddName").style.cssText="pointer-events: auto;";
+    document.getElementById("AddFirstName").style.cssText="pointer-events: auto;";
+    document.getElementById("AddBio").style.cssText="pointer-events: auto;";
+})
+
