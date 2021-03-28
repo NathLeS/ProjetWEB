@@ -47,58 +47,6 @@ nav {
     z-index: -3;
 }
 
-/* ------------------ Onglet Etudiants --------------------*/
-
-#test {                   
-    position: relative;
-    color: #3b0f0f;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 600;
-    font-size: 70px;
-    z-index: -1;
-    padding-top: 650px;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, 37rem);
-    justify-content: center;
-}
-
-.animateThis article{
-    height: 220px;
-    width: 530px;
-    margin: 30px 25px;
-    background-color: #ecf0f1;
-    border-radius: 145px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
-.animateThis img{
-    object-fit: cover;
-    width : 220px; height : 220px;
-    border: none;
-    -moz-border-radius : 145px;
-    -webkit-border-radius : 145px;
-    border-radius : 145px;
-}
-
-.animateThis h1 {
-    position: relative;
-    top: -233px;
-    left: 260px;
-    color:#1abc9c;
-    font-size: 37px;
-}
-
-.animateThis p {
-    position: relative;
-    width: 210px;
-    top: -217px;
-    left: 260px;
-    color:#757575 ;
-    font-size: 17px;
-}
-
 /* -------------------- Menu d'ajout -------------------- */
 
 .addMenu {
@@ -380,7 +328,7 @@ nav {
 .addBtn {                       /* Bouton ajouter (une offre, une entreprise, etc..) */
     position: absolute;
     background: #ffffff;
-    margin-left: 10px;
+    margin-left: 20px;
     width: 45px;
     height: 45px;
     border: none;
@@ -652,6 +600,172 @@ input:checked + label {
     }
 }
 
+/* ############################################################################### */
+/* ------------------------------- Onglet Etudiant ------------------------------- */
+/* ############################################################################### */
+
+#student_profile {   
+    padding-top: 80px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 37rem);
+    justify-content: center;
+}
+
+
+#student_profile article{
+    cursor: pointer;
+    height: 220px;
+    width: 530px;
+    margin: 30px 25px;
+    background-color: #ecf0f1;
+    border-radius: 145px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.studentPhoto{
+    object-fit: cover;
+    width : 220px; height : 220px;
+    border: none;
+    -moz-border-radius : 145px;
+    -webkit-border-radius : 145px;
+    border-radius : 145px;
+}
+
+#student_profile h1 {
+    position: relative;
+    top: -233px;
+    left: 260px;
+    color:#1abc9c;
+    font-size: 37px;
+}
+
+#student_profile span{
+    position: relative;
+    top: -275px;
+    left: 260px;
+    color:#1abc9c;
+    font-size: 37px;
+    font-weight: bold;
+}
+
+#student_profile p {
+    position: relative;
+    width: 210px;
+    top: -225px;
+    left: 260px;
+    color:#757575 ;
+    font-size: 17px;
+}
+
+/*-------------- Formulaire pour modifier un etudiant ----------*/
+
+.studentForm {
+    position: absolute;
+    height: 350px;
+    width: 740px;
+    top: 300%;
+    left: 25%;
+    background-color: #ecf0f1;
+    border-radius: 355px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: 1s;
+}
+
+.studentForm input {
+    border: none;
+    background-color: #ecf0f1;
+    pointer-events: none;
+}
+
+.studentForm textarea{
+    border: none;
+    background-color: #ecf0f1;
+    pointer-events: none;
+    font-size: 17px;
+}
+
+.studentPhotoForm{
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+    -moz-border-radius : 275px;
+    -webkit-border-radius : 275px;
+    border-radius : 275px;
+}
+
+#studentName {
+    position: absolute;
+    top: 15px;
+    left: 380px;
+    width: 200px;
+    font-weight: bold;
+    color:#1abc9c;
+    font-size: 37px;
+}
+
+#studentFirstName{
+    position: absolute;
+    top: 58px;
+    left: 380px;
+    width: 200px;
+    font-weight: bold;
+    color:#1abc9c;
+    font-size: 37px;
+}
+
+#studentBio {
+    position:absolute;
+    top: 150px;
+    left: 380px;
+    color: #757575;
+}
+
+.quitProfileBtn{
+    cursor: pointer;
+}
+
+.editProfileBtn{
+    cursor: pointer;
+}
+
+/*-------------- Formulaire pour créer un etudiant ----------*/
+
+#AddStudentForm{
+    height: 350px;
+    width: 740px;
+    background-color: #ecf0f1;
+    border-radius: 355px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: 1s;
+}
+
+#AddName{
+    border: none;
+    /*pointer-events: none;*/
+    position: absolute;
+    top: 70%;
+    left: 15%;
+}
+
+#AddFirstName{
+    border: none;
+    position: absolute;
+    top: 75%;
+    left: 15%;
+    /*pointer-events: none;*/
+}
+
+#AddBio{
+    border: none;
+    /*pointer-events: none;*/
+    position: absolute;
+    top: 80%;
+    left: 15%;
+}
+
+.btnForm{
+    cursor: pointer;
+}
 
 /* ############################################################################ */
 /* ----------------------------------- PAGE ----------------------------------- */
